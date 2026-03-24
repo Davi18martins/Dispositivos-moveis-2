@@ -20,7 +20,7 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
     private int imagemPrimeiroToque, imagemSegundoToque, contaToque;
     private TextView texto;
     private ArrayList<Integer> lista;
-    private Button btn;
+    private Button btn, btn2;
     private String nomeSujeito;
 
     @Override
@@ -29,6 +29,7 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_tela03);
         btn = findViewById(R.id.button4);
         btn.setOnClickListener(this);
+
 
         texto = findViewById(R.id.textView1);
         Intent i = new Intent();
@@ -61,7 +62,6 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         imgPrimeiroToque = new  ImageView(this);
         imgSegundoToque = new ImageView(this);
         carregaTudo();
-
 
     }
     public void carregaTudo(){
@@ -242,6 +242,10 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         }
         if(v == btn){
             carregaTudo();
+        }
+        if(v == btn2){
+            Intent i = new Intent(this, Tela04.class);
+            startActivity(i);
         }
     }
 }
