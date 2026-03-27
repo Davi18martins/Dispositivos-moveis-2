@@ -243,9 +243,5 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         if(v == btn){
             carregaTudo();
         }
-        if(v == btn2){
-            Intent i = new Intent(this, Tela04.class);
-            startActivity(i);
-        }
     }
 }
