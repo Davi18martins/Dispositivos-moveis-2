@@ -29,7 +29,8 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_tela03);
         btn = findViewById(R.id.button4);
         btn.setOnClickListener(this);
-
+        btn2 =findViewById(R.id.button5);
+        btn2.setOnClickListener(this);
 
         texto = findViewById(R.id.textView1);
         Intent i = new Intent();
@@ -128,6 +129,7 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
     }
     public void compara(int imagem1, int imagem2){
         contaToque=0;
+
         if(imagem1 == imagem2){
             imgPrimeiroToque.setEnabled(false);
             imgPrimeiroToque.setBackgroundColor(Color.GREEN);
@@ -242,6 +244,10 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         }
         if(v == btn){
             carregaTudo();
+        }
+        if (v == btn2){
+            Intent i = new Intent(this, Tela04.class);
+            startActivity(i);
         }
     }
 }
