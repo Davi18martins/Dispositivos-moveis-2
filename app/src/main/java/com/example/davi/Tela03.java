@@ -17,7 +17,7 @@ import java.util.Collections;
 
 public class Tela03 extends AppCompatActivity implements View.OnClickListener {
     private ImageView img1, img2, img3, img4, img5, img6,img7, img8, imgPrimeiroToque,imgSegundoToque;
-    private int imagemPrimeiroToque, imagemSegundoToque, contaToque;
+    private int imagemPrimeiroToque, imagemSegundoToque, contaToque,quantasJogadas;
     private TextView texto;
     private ArrayList<Integer> lista;
     private Button btn, btn2;
@@ -31,6 +31,7 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         btn.setOnClickListener(this);
         btn2 =findViewById(R.id.button5);
         btn2.setOnClickListener(this);
+        quantasJogadas = 0;
 
         texto = findViewById(R.id.textView1);
         Intent i = new Intent();
@@ -244,10 +245,16 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         }
         if(v == btn){
             carregaTudo();
+            quantasJogadas++;
         }
         if (v == btn2){
             Intent i = new Intent(this, Tela04.class);
+            Bundle caixa = new Bundle();
+            caixa.putString("nome",nomeSujeito);
+            caixa.putInt("contador",quantasJogadas);
+            i.putExtras(caixa);
             startActivity(i);
+
         }
     }
 }
