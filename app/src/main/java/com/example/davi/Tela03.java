@@ -31,7 +31,7 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
         btn.setOnClickListener(this);
         btn2 =findViewById(R.id.button5);
         btn2.setOnClickListener(this);
-        quantasJogadas = 0;
+        quantasJogadas = 1;
 
         texto = findViewById(R.id.textView1);
         Intent i = new Intent();
@@ -68,14 +68,14 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
     }
     public void carregaTudo(){
         texto.setText(nomeSujeito);
-        img1.setBackgroundColor(Color.CYAN);
-        img2.setBackgroundColor(Color.CYAN);
-        img3.setBackgroundColor(Color.CYAN);
-        img4.setBackgroundColor(Color.CYAN);
-        img5.setBackgroundColor(Color.CYAN);
-        img6.setBackgroundColor(Color.CYAN);
-        img7.setBackgroundColor(Color.CYAN);
-        img8.setBackgroundColor(Color.CYAN);
+        img1.setBackgroundColor(Color.WHITE);
+        img2.setBackgroundColor(Color.WHITE);
+        img3.setBackgroundColor(Color.WHITE);
+        img4.setBackgroundColor(Color.WHITE);
+        img5.setBackgroundColor(Color.WHITE);
+        img6.setBackgroundColor(Color.WHITE);
+        img7.setBackgroundColor(Color.WHITE);
+        img8.setBackgroundColor(Color.WHITE);
         img1.setEnabled(false);
         img2.setEnabled(false);
         img3.setEnabled(false);
@@ -145,8 +145,8 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
                 public void run() {
                     imgPrimeiroToque.setImageResource(R.drawable.ic_action_name_2);
                     imgSegundoToque.setImageResource(R.drawable.ic_action_name_2);
-                    imgPrimeiroToque.setBackgroundColor(Color.CYAN);
-                    imgSegundoToque.setBackgroundColor(Color.CYAN);
+                    imgPrimeiroToque.setBackgroundColor(Color.WHITE);
+                    imgSegundoToque.setBackgroundColor(Color.WHITE);
                 }
             }, 2000);
         }
@@ -154,6 +154,13 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         contaToque ++;
+
+        if(v == imgPrimeiroToque && contaToque == 1) return;
+
+        if(contaToque == 2 && v == imgPrimeiroToque){
+            contaToque--;
+            return;
+        }
 
         if(v == img1){
             img1.setImageResource(lista.get(0));

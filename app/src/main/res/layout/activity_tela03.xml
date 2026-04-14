@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.40"
-        android:background="#00FFFF"
+        android:background="#FFFFFF"
         android:orientation="horizontal">
 
         <ImageView
@@ -90,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.40"
-        android:background="#00FFFF"
+        android:background="#FCFFFF"
         android:orientation="horizontal">
 
         <ImageView
